@@ -2,3 +2,7 @@
   <input name="item"></input>
    <input type="submit" value="submit">
 </form>
+
+<% for @item in @items %>
+  <%= @item %>
+<% end %>

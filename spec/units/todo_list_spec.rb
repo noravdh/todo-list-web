@@ -1,8 +1,11 @@
 require 'todolist'
 describe ToDoList do
 
- it 'can check there is something in the list' do
+ it 'add something into the todolist' do
    todolist = ToDoList.new
-   expect(todolist.list).to include('Buy Milk')
+ end
+
+ it 'read all the items in the todo list' do
+   todolist = ToDoList.new
  end
 end

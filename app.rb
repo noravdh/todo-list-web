@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative 'lib/todolist'
 class ToDoListApp < Sinatra::Base
 
+  #this creates an instance of the todolist
   $todolist = ToDoList.new
 
   get '/' do
@@ -9,11 +10,14 @@ class ToDoListApp < Sinatra::Base
   end
 
   get '/todolist' do
-    $todolist.list
+    #todo - write the code which reads items from $todolist
+    @items = []
+    erb :todos
   end
 
   post '/add-item' do
     item = params['item']
+    #todo - write the code which adds an item to $todolist
 
     redirect('/todolist')
   end
