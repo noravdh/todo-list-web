@@ -11,7 +11,7 @@ class ToDoListApp < Sinatra::Base
 
   get '/todolist' do
     #todo - write the code which reads items from $todolist
-    @items = []
+    @items = $todolist.items
     erb :todos
   end
 
