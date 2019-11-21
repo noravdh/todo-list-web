@@ -17,7 +17,7 @@ class ToDoListApp < Sinatra::Base
 
   post '/add-item' do
     item = params['item']
-    #todo - write the code which adds an item to $todolist
+    $todolist.add_item(item)
 
     redirect('/todolist')
   end
