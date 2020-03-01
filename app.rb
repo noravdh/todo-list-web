@@ -10,6 +10,7 @@ class ToDoListApp < Sinatra::Base
   end
 
   get '/todolist' do
+    
     @items = $todolist.items
     erb :todos
   end
