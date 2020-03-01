@@ -20,9 +20,5 @@ class ToDoListApp < Sinatra::Base
     redirect('/todolist')
   end
 
-  get '/add-item-input' do
-    erb :add_item
-  end
-
   run! if app_file == $0
 end
