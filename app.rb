@@ -6,19 +6,39 @@ class ToDoListApp < Sinatra::Base
   $todolist = ToDoList.new
 
   get '/' do
-    'Hello world'
+    erb :index
   end
 
+# GET REQUEST FROM CONTROLLER
   get '/todolist' do
-    
+    #ASK MODEL FOR TODO ITEMS
     @items = $todolist.items
-    erb :todos
+    # ASK VIEW FOR HTML INCLUDING TODO ITEMS
+    response = erb :todos
+    #SEND RESPONSE TO SERVER
+    response
+  end
+
+  get '/add-item' do
+    response = erb :add_item
+    response
   end
 
   post '/add-item' do
-    item = params[:item]
+    name = params[:name]
+    category = params[:category]
+    item = TodoItem.new(name, category)
     $todolist.add_item(item)
-    redirect('/todolist')
+    response = redirect('/todolist')
+    response
+  end
+
+  get '/todolistbycategory' do
+    category = params[:category]
+    items = $todolist.items
+    @filtered_items = items.select { |item| item.category == category}
+    response = erb :items_by_category
+    response
   end
 
   run! if app_file == $0

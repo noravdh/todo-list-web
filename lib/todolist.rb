@@ -1,15 +1,17 @@
-#TODO - test drive this model object to have
-
+require_relative 'todoitem'
 class ToDoList
-
-  attr_reader :items
   def initialize
-    @items = []
+    @items = [TodoItem.new("Buy milk", "Domestic"),
+              TodoItem.new("Tax returns", "Finance")
+    ]
   end
 
   def add_item(item)
     @items.push(item)
   end
 
+  def items
+    @items
+  end
 
 end

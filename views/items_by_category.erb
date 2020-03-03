@@ -1,0 +1,14 @@
+<h1>Items in the todo list for category: <%= @filtered_items.first.category %></h1>
+<table>
+  <th>
+    Name
+  </th>
+  <% for @item in @filtered_items %>
+    <tr>
+      <td>
+        <%= @item.name %>
+      </td>
+
+    </tr>
+  <% end %>
+</table>
