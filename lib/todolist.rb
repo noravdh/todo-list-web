@@ -10,6 +10,9 @@ class ToDoList
     @items.push(item)
   end
 
+  def by_category(category)
+    @items.select {|item| item.category == category}
+  end
   def items
     @items
   end

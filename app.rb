@@ -33,10 +33,9 @@ class ToDoListApp < Sinatra::Base
     response
   end
 
-  get '/todolistbycategory' do
+  get '/bycategory' do
     category = params[:category]
-    items = $todolist.items
-    @filtered_items = items.select { |item| item.category == category}
+    @items = $todolist.by_category(category)
     response = erb :items_by_category
     response
   end
