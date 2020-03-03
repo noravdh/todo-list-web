@@ -6,7 +6,8 @@ class ToDoList
     ]
   end
 
-  def add_item(item)
+  def add_item(name,category)
+    item = TodoItem.new(name, category)
     @items.push(item)
   end
 

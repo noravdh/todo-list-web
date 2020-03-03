@@ -27,8 +27,7 @@ class ToDoListApp < Sinatra::Base
   post '/add-item' do
     name = params[:name]
     category = params[:category]
-    item = TodoItem.new(name, category)
-    $todolist.add_item(item)
+    $todolist.add_item(name,category)
     response = redirect('/todolist')
     response
   end
