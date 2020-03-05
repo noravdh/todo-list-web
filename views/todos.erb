@@ -7,6 +7,9 @@
     <th>
       Category
     </th>
+    <th>
+      Deadline
+    </th>
   </thead>
 
   <% for @item in @items %>
@@ -17,7 +20,9 @@
       <td>
         <%= @item.category %>
       </td>
-
+      <td>
+        <%= @item.deadline %>
+      </td>
     </tr>
   <% end %>
 </table>
