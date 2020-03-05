@@ -28,7 +28,7 @@ class ToDoListApp < Sinatra::Base
     name = params[:name]
     category = params[:category]
     deadline = params[:deadline]
-    $todolist.add_item(name,category,deadline)
+    $todolist.add_item(name, category, deadline)
     response = redirect('/todolist')
     response
   end
